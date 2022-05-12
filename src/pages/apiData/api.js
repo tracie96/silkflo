@@ -1,7 +1,7 @@
 import axios from "axios";
 export const cryptoTable = "https://api2.binance.com/api/v3/ticker/24hr";
 export const popData ="https://datausa.io/api/data?drilldowns=Nation&measures=Population";
-export const uniData = "http://universities.hipolabs.com/search";
+export const uniData = "https://api.jikan.moe/v3/search/anime?q=naruto";
 export const findPet = "https://dog.ceo/api/breeds/image/random";
 export const activity = "https://www.boredapi.com/api/activity";
 

@@ -38,7 +38,7 @@ const structure = [
   },
   {
     id: 5,
-    label: "Find Universities",
+    label: "All Things Naruto",
     link: "/app/tables",
     icon: <TableIcon /> 
   },

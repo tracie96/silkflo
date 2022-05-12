@@ -1,52 +1,59 @@
-import React, { useEffect ,useState} from "react";
-import { Grid,CircularProgress } from "@material-ui/core";
+import React, { useEffect, useState } from "react";
+import { Grid, CircularProgress } from "@material-ui/core";
 import MUIDataTable from "mui-datatables";
 
 // data
-import {axiosUniData} from "./api";
-
+import { axiosUniData } from "./api";
 
 export default function Tables() {
   const retrievedObject = localStorage.getItem("uniData");
   const newdata = JSON.parse(retrievedObject);
   const [data, setData] = useState(newdata ? newdata : []);
-  const [loading, setLoading] = useState(false); 
-  const getData=()=>{
-      setLoading(true);
-     axiosUniData("get").then(data=>{
-        setData(data)
-        localStorage.setItem("uniData", JSON.stringify(data));
-        setLoading(false);
-      })
-
-}
-useEffect(() => {
-  try {
-    if (!retrievedObject) {
-      getData();
+  const [loading, setLoading] = useState(false);
+  const getData = () => {
+    setLoading(true);
+    axiosUniData("get").then((data) => {
+      console.log(data,"kk")
+      setData(data.results);
+      localStorage.setItem("uniData", JSON.stringify(data));
+      setLoading(false);
+    });
+  };
+  useEffect(() => {
+    try {
+      if (!retrievedObject) {
+        getData();
+      }
+    } catch (e) {
+      console.log(e);
     }
-  } catch (e) {
-    console.log(e);
-  }
-}, [retrievedObject]);
+  }, [retrievedObject]);
 
   return (
     <>
       <Grid container spacing={4}>
         <Grid item xs={12}>
-        {loading?<CircularProgress size={26} />
-  :     <MUIDataTable
-  title="University Data"
-  data={data}
-  columns={["alpha_two_code", "country", "name","domains","web_pages"]}
-  options={{
-    filterType: "checkbox",
-  }}
-/>
-    }
+          {loading ? (
+            <CircularProgress size={26} />
+          ) : (
+            <MUIDataTable
+              title="University Data"
+              data={data}
+              columns={[
+                "url",
+                "title",
+                "type",
+                "episodes",
+                "score",
+                "rated"
+              ]}
+              options={{
+                filterType: "checkbox",
+              }}
+            />
+          )}
         </Grid>
       </Grid>
     </>
   );
- 
 }
