@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { Grid, CircularProgress } from "@material-ui/core";
 import MUIDataTable from "mui-datatables";
+
 // data
-import { axiosPopData } from "./api";
+import { axiosCryptoTable } from "./api";
 
 export default function Tables() {
-  const retrievedObject = localStorage.getItem("countryData");
+  const retrievedObject = localStorage.getItem("cryptoData");
   const newdata = JSON.parse(retrievedObject);
-
   const [data, setData] = useState(newdata ? newdata : []);
   const [loading, setLoading] = useState(false);
   const getData = () => {
     setLoading(true);
-    axiosPopData("get").then((data) => {
-      setData(data.data);
-      localStorage.setItem("countryData", JSON.stringify(data.data));
+    axiosCryptoTable("get").then((data) => {
+      setData(data);
+      localStorage.setItem("cryptoData", JSON.stringify(data));
       setLoading(false);
     });
   };
@@ -36,15 +36,17 @@ export default function Tables() {
             <CircularProgress size={26} />
           ) : (
             <MUIDataTable
-              title="United State Population Data"
+              title="Crypto Chart"
               data={data}
               columns={[
-                "ID Nation",
-                "Nation",
-                "ID Year",
-                "Year",
-                "Population",
-                "Slug Nation",
+                "symbol",
+                "priceChange",
+                "weightedAvgPrice",
+                "lastPrice",
+                "lastQty",
+                "bidPrice",
+                "askPrice",
+                "openPrice",
               ]}
               options={{
                 filterType: "checkbox",

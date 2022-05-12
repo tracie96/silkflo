@@ -12,7 +12,7 @@ import Sidebar from "../Sidebar";
 // pages
 import Tables from "../../pages/apiData";
 import Country from "../../pages/apiData/contryTable";
-import PetTable from "../../pages/apiData/petTable";
+import CryptoTable from "../../pages/apiData/cryptoTable";
 
 import Bored from "../../pages/finditem/bored";
 import Findapet from "../../pages/finditem/findapet";
@@ -39,7 +39,7 @@ function Layout(props) {
           <div className={classes.fakeToolbar} />
           <Switch>
             <Route path="/app/tables" component={Tables} />
-            <Route path="/app/petables" component={PetTable} />
+            <Route path="/app/crypto" component={CryptoTable} />
             <Route path="/app/population" component={Country} />
             <Route path="/app/bored" component={Bored} />
             <Route path="/app/findapet" component={Findapet} />

@@ -24,8 +24,8 @@ import {
 const structure = [
   {
     id: 1,
-    label: "Pet Homes",
-    link: "/app/petables", icon: <TableIcon /> 
+    label: "Crypto Dashboard",
+    link: "/app/crypto", icon: <TableIcon /> 
   },
   { id: 2, label: "Bored API", link: "/app/bored",  icon: <TableIcon /> },
   { id: 3, label: "Find Your Pet", link: "/app/findapet", icon: <TableIcon /> },

@@ -7,7 +7,7 @@ export const activity = "https://www.boredapi.com/api/activity";
 
 export let timoutReq = 10000;
 
-export const axiosPetTable = async (method) => {
+export const axiosCryptoTable = async (method) => {
   try {
     let res = await axios({
       method,
@@ -47,6 +47,7 @@ export const axiosPopData = async (method) => {
     return { er: error.response.data };
   }
 };
+
 export const axiosUniData = async (method) => {
   try {
     let res = await axios({
