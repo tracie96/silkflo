@@ -13,9 +13,8 @@ export default function Tables() {
   const getData = () => {
     setLoading(true);
     axiosUniData("get").then((data) => {
-      console.log(data,"kk")
       setData(data.results);
-      localStorage.setItem("uniData", JSON.stringify(data));
+      localStorage.setItem("uniData", JSON.stringify(data.results));
       setLoading(false);
     });
   };
