@@ -115,7 +115,7 @@ function Login(props) {
                     color="primary"
                     size="large"
                   >
-                    Login
+                    Continue
                   </Button>
                 )}
                 
