@@ -34,7 +34,7 @@ export default function Tables() {
             <CircularProgress size={26} />
           ) : (
             <MUIDataTable
-              title="University Data"
+              title="Naruto Data"
               data={data}
               columns={[
                 "url",
