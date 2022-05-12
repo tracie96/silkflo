@@ -29,7 +29,6 @@ function Login(props) {
   var [isLoading, setIsLoading] = useState(false);
   var [error, setError] = useState(null);
   var [activeTabId, setActiveTabId] = useState(0);
-  var [nameValue, setNameValue] = useState("");
   var [loginValue, setLoginValue] = useState("");
   var [passwordValue, setPasswordValue] = useState("");
 
