@@ -60,7 +60,7 @@ function loginUser(dispatch, login, password, history, setIsLoading, setError) {
       setError(null);
       setIsLoading(false);
 
-      history.push("/app/dashboard");
+      history.push("/app/crypto");
     }, 2000);
   } else {
     dispatch({ type: "LOGIN_FAILURE" });
