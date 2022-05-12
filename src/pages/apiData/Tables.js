@@ -20,13 +20,11 @@ export default function Tables() {
   };
   useEffect(() => {
     try {
-      if (!retrievedObject) {
         getData();
-      }
     } catch (e) {
       console.log(e);
     }
-  }, [retrievedObject]);
+  }, []);
 
   return (
     <>
