@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Drawer, IconButton, List } from "@material-ui/core";
 import {
-  Home as HomeIcon,
   BorderAll as TableIcon,
   ArrowBack as ArrowBackIcon,
 } from "@material-ui/icons";
@@ -23,7 +22,6 @@ import {
 } from "../../context/LayoutContext";
 
 const structure = [
-  { id: 0, label: "Dashboard", link: "/app/dashboard", icon: <HomeIcon /> },
   {
     id: 1,
     label: "Pet Homes",
